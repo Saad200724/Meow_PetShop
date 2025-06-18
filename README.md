@@ -1,56 +1,60 @@
-```markdown
 # Meow Meow Pet Shop
 
-A full-stack e-commerce web application specializing in pet supplies, primarily focused on cats with a small section for dog products. Built with React, Express, and Vite, designed to provide a smooth, user-friendly shopping experience.
+**Meow Meow Pet Shop** holo ekta full-stack e-commerce web application, jar maddhome pet supplies (mainly cat products, kichu dog products o ase) online sale kora hoy. Ei project React + Vite diye frontend banano hoyeche, ar backend hishebe Express + TypeScript + serverless architecture (Vercel) use kora hoyeche.
 
 ---
 
 ## Features
 
-- Responsive and modern UI built with React and Tailwind CSS
-- User authentication and admin login
-- Product catalog with filtering and search
-- Shopping cart and order modal
-- Backend API built with Express.js and serverless deployment support for Vercel
-- Integration with PostgreSQL via Drizzle ORM
-- Real-time logging and error handling
-- Mobile friendly with custom React hooks
-- Static frontend and serverless backend deployed on Vercel
+- Responsive, modern UI with Tailwind CSS and Radix UI components  
+- User authentication & admin panel support  
+- Product listing with search, filter, and pagination  
+- Shopping cart & order processing modal  
+- Backend REST API with Express.js & TypeScript  
+- Serverless backend deployment via Vercel using `@vendia/serverless-express`  
+- PostgreSQL database integration with Drizzle ORM  
+- React Query for data fetching & caching  
+- Detailed logging & error handling middleware  
+- Local development with Vite & hot reloading  
 
 ---
 
-## Tech Stack
+## Technology Stack
 
-- **Frontend:** React, TypeScript, Vite, Tailwind CSS, Radix UI components  
-- **Backend:** Express.js, TypeScript, @vendia/serverless-express  
-- **Database:** PostgreSQL (via Drizzle ORM)  
-- **Deployment:** Vercel (serverless functions + static hosting)  
-- **Other:** React Query, Passport.js for authentication, Recharts for charts
+| Frontend                 | Backend                       | Database           | Deployment       |
+|--------------------------|-------------------------------|--------------------|------------------|
+| React, TypeScript        | Express.js, TypeScript         | PostgreSQL (Drizzle ORM) | Vercel (Serverless + Static) |
+| Vite                     | `@vendia/serverless-express`  |                    |                  |
+| Tailwind CSS             |                               |                    |                  |
+| Radix UI components      |                               |                    |                  |
+| React Query              |                               |                    |                  |
 
 ---
 
 ## Project Structure
 
-```
+Meow Meow Pet Shop/
+├── client/ # Frontend React app source code
+│ ├── src/
+│ │ ├── components/ # Reusable UI components (buttons, cards, modals etc)
+│ │ ├── pages/ # Pages like Home, Products, Admin, Login, Contact
+│ │ ├── hooks/ # Custom React hooks
+│ │ └── lib/ # Utility functions and API clients
+│ └── index.html # Main HTML template
+├── server/ # Backend Express API
+│ ├── index.ts # Express app setup with serverless export
+│ ├── routes.ts # API route definitions
+│ ├── storage.ts # Data storage logic
+│ └── vite.ts # Vite middleware for dev mode
+├── shared/ # Shared schemas and types for frontend/backend
+├── package.json # Project dependencies and scripts
+├── vercel.json # Vercel deployment configuration
+├── tailwind.config.ts # Tailwind CSS configuration
+└── tsconfig.json # TypeScript compiler config
 
-Meow Meow Pet Shop
-├── client/                # Frontend React app
-│   ├── src/
-│   │   ├── components/    # UI components
-│   │   ├── pages/         # Page components
-│   │   └── hooks/         # Custom React hooks
-│   └── index.html
-├── server/                # Backend Express API
-│   ├── index.ts           # Express app setup
-│   ├── routes.ts          # API route definitions
-│   └── vite.ts            # Vite dev middleware setup
-├── shared/                # Shared code (e.g. validation schemas)
-├── package.json           # Dependencies and scripts
-├── vercel.json            # Vercel deployment config
-├── tailwind.config.ts     # Tailwind CSS config
-└── tsconfig.json          # TypeScript config
-
-````
+yaml
+Copy
+Edit
 
 ---
 
@@ -58,72 +62,82 @@ Meow Meow Pet Shop
 
 ### Prerequisites
 
-- Node.js >= 18
-- npm or yarn
-- PostgreSQL database (optional for local dev)
+- Node.js version 18 or higher  
+- npm or yarn package manager  
+- PostgreSQL database for full features (optional for frontend-only dev)  
 
 ### Installation
 
+Clone the repository and install dependencies:
+
 ```bash
-# Clone repo
 git clone https://github.com/Saad200724/Meow_PetShop.git
 cd Meow_PetShop
-
-# Install dependencies for both frontend and backend
 npm install
-````
+Running Locally (Development)
+Start the development server (frontend + backend):
 
-### Running Locally (Development)
-
-```bash
-# Start dev server with hot reload (frontend + backend)
+bash
+Copy
+Edit
 npm run dev
-```
+Open http://localhost:5000 in your browser.
 
-### Building for Production
+Building for Production
+To build frontend and bundle backend for production:
 
-```bash
+bash
+Copy
+Edit
 npm run build
-```
+Running Production Server Locally
+Start the built backend server (requires build):
 
-### Running Production Server Locally
-
-```bash
+bash
+Copy
+Edit
 npm run start
-```
+Deployment on Vercel
+This project supports easy deployment on Vercel with:
 
----
+Static frontend hosted from dist/public folder
 
-## Deployment
+Serverless backend deployed via @vercel/node runtime
 
-This project is designed to deploy easily on **Vercel** with static frontend and serverless backend.
+API routes proxied under /api/*
 
-* Ensure `vercel.json` is configured properly
-* Push your code to GitHub
-* Link the repository to your Vercel project
-* Vercel automatically builds and deploys the app
+Steps to deploy
+Push your code to GitHub
 
----
+Connect your GitHub repo to Vercel
 
-## Contributing
+Use build command: npm run build
 
-Feel free to open issues or submit pull requests.
-Make sure to run tests and follow existing code style.
+Set output directory: dist/public
 
----
+Vercel will automatically deploy backend and frontend
 
-## License
+Environment Variables
+Make sure to configure environment variables as needed (e.g., database URLs, API keys) before running or deploying.
 
-MIT License © 2025 Saad Bin Tofayel Tahsin
+Contributing
+Contributions are welcome! Feel free to:
 
----
+Open issues for bugs or features
 
-## Contact
+Submit pull requests with improvements
 
+Follow the existing code style and test thoroughly
+
+License
+This project is licensed under the MIT License.
+
+Contact
 For any queries or collaboration, contact:
+
+**Author:** Saad Bin Tofayel Tahsin
 **Email:** [saadbintofayeltahsin@gmail.com](mailto:saadbintofayeltahsin@gmail.com)
 **GitHub:** [Saad200724](https://github.com/Saad200724)
 
----
 
 *Thank you for visiting Meow Meow Pet Shop! 🐱🐶*
