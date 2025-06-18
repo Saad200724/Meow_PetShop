@@ -1,0 +1,46 @@
+Create a modern, premium, and mobile-responsive website for a pet store called **"Meow Meow Pet Shop"**, located in Savar, Bangladesh.
+
+🎯 Brand Identity:
+- Use the exact primary color: `#ffde59` (a warm yellow from their logo)
+- Accent color: Dark green (`#198754`)
+- Font: Clean, modern, and friendly — use rounded, readable fonts
+- Visual style: Playful, soft, and pet-friendly — with paw icons, cute imagery, and soft shadows
+
+🖼️ Overall Style:
+- Use soft curves, subtle transitions, and spacing that feels clean
+- White background sections with pops of yellow and green
+- Tailwind CSS for styling and responsiveness
+
+📄 Pages to include:
+
+1. **Home Page**
+   - Hero section with the store name, tagline: *"A Pet Shop With Everything You Need"*
+   - CTA buttons: "Order Now", "View Products", "Message on Facebook"
+   - Highlight featured products (with dummy images)
+   - “Open Every Day | 10AM–10PM” banner
+   - Delivery info and small location map
+
+2. **Products Page**
+   - Grid layout of pet items (Cat food, Dog food, Accessories)
+   - Each item with image, name, price, and "Order Now" button
+   - Filter option by category (Dog, Cat, Accessories)
+
+3. **About Page**
+   - Short story about Meow Meow Pet Shop
+   - Values: Trusted, Pet-Loving, Locally Trusted Since [Fake Year]
+   - Why choose us: Affordable, Delivery Available, Quality Products
+
+4. **Contact Page**
+   - Phone number, Messenger chat button, Facebook link
+   - Google Map embed of Savar location
+   - Opening hours (10 AM – 10 PM)
+
+✨ Extra Features:
+- Use icons like paw prints, cat faces, food bowls
+- Responsive for mobile users
+- Add hover effects on buttons and cards
+- Fast-loading and SEO-friendly
+- Include a testimonial carousel from happy pet owners
+- Optionally: Add Messenger chat floating button
+
+This is for a real client pitch. Make it impressive, high-quality, and visually aligned with the color and vibe of their Facebook branding. Do not include lorem ipsum text; use real-sounding placeholder content.
