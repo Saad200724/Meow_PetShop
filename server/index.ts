@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { createServer } from "@vendia/serverless-express"; // ✅ added for Vercel
 
 const app = express();
 
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Error handler middleware
+// Error handler
 app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
   const status = err.status || err.statusCode || 500;
   const message = err.message || "Internal Server Error";
@@ -49,22 +50,23 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
 // Register routes
 registerRoutes(app);
 
-// 🔁 Vite setup only in development (i.e. local)
+// Development (local dev with Vite)
 if (process.env.NODE_ENV === "development") {
   (async () => {
     const http = await import("http");
     const server = http.createServer(app);
     await setupVite(app, server);
-
     const port = 5000;
     server.listen(port, () => {
       log(`serving on port ${port}`);
     });
   })();
-} else {
-  // Production: Static serve (Netlify) or API (Vercel)
+}
+
+// Production static serve
+else {
   serveStatic(app);
 }
 
-// ✅ This is needed for Vercel
-export default app;
+// ✅ This is the key line for Vercel backend support:
+export default createServer(app); 
